@@ -1,5 +1,5 @@
 # Game-Of-Amazons
-(Incoming in C++) - an extended version of a popular game called "The Game of Amazons".
+(Work in in progress) - an extended version of a popular game called "The Game of Amazons".
 
 RULES:
 1.There can be players up to 8 that are playing with each other or there can be 1 player playing with the computer.
