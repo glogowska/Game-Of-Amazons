@@ -1,7 +1,8 @@
 #include "players.h"
 
-Player:: Player(){
-    this->playerID = 0;
+Player:: Player(int playerID){
+    this->playerID = playerID;
+    this->amazonCounter=0;
     next=nullptr;
     for(int i=0;i<AMAZONSPERPLAYER;i++){
         aPtr[i]=nullptr;
@@ -48,3 +49,12 @@ int Player::getAmazonCounter(){
     return this->amazonCounter;
 }
 
+Player *&Player::refNextPlayer(){
+    return this->next;
+}
+
+bool Player::addAllAmazons(){
+    for(int i=0;i<AMAZONSPERPLAYER;i++){
+        this->addNextAmazonToPlayer();
+    }
+}

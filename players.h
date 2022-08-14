@@ -13,16 +13,18 @@ Amazon *aPtr[AMAZONSPERPLAYER];
 // bool addAmazonToPlayer(Amazon *aPtr);
 
 public:
-Player();
+Player(int playerID);
 
 
 bool addAmazonToPlayer(Amazon *aPtr);
 bool addNextAmazonToPlayer();
+bool addAllAmazons();
 void printPlayerInfo();
 void increaseAmazonCounter();
 
 int getplayerID();
 int getAmazonCounter();
+Player *&refNextPlayer();
 
 };
 
