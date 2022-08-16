@@ -22,6 +22,10 @@ bool addAllAmazons();
 void printPlayerInfo();
 void increaseAmazonCounter();
 
+//returns id of a free amazon or if all amazons are already on some fields on the board, the method
+//returns 0
+int freeAmazon();
+
 int getplayerID();
 int getAmazonCounter();
 Player *&refNextPlayer();

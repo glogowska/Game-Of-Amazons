@@ -16,6 +16,9 @@ class Amazon{
     void printAmazonInfo();
     void printAmazonInfoBasic();
 
+    //returns true is the amazon is not on the board yet, and false otherwise
+    bool freeAmazon();
+
     //getters
     int getAmazonID();
     int getRow();

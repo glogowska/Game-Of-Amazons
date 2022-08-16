@@ -15,6 +15,13 @@ void Amazon::printAmazonInfoBasic(){
     cout<<"Amazon "<<this->amazonID<<endl;
 }
 
+bool Amazon::freeAmazon(){
+    if(this->row == 0 && this->col == 0){
+        return true;
+    }
+    return false;
+}
+
 int Amazon::getAmazonID(){
     return this->amazonID;
 }

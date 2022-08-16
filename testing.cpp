@@ -1,4 +1,4 @@
-#include "playersManager.cpp"
+#include "boardManager.cpp"
 
 int testing(){
     //TESTING AMAZON CLASS
@@ -34,6 +34,13 @@ int testing(){
         PM1.addPlayer(2);
         PM1.addPlayer(3);
         PM1.printPlayersList();
+    }
+    //TEST 1.5 BOARD GENERATION
+    {
+        cout<<"TEST 1.5"<<endl;
+        BoardManager BM1;
+        BM1.generateBoard(3,4);
+        BM1.printBoard();
     }
     return 0;
 }

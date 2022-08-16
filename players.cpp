@@ -57,4 +57,14 @@ bool Player::addAllAmazons(){
     for(int i=0;i<AMAZONSPERPLAYER;i++){
         this->addNextAmazonToPlayer();
     }
+    return true;/////////////////
+}
+
+int Player::freeAmazon(){
+    for(int i=0;i<AMAZONSPERPLAYER;i++){
+        if(this->freeAmazon()==true){
+            return i+1;
+        }
+    }
+    return 0;
 }
