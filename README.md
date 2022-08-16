@@ -8,4 +8,4 @@ RULES:
 4.Different artifacts or a treasure could be placed on the board fields.
 5.Player moves from a field to a field according to the following rules: (TO BE CONTINUED)
 6.Amazons of the players are moving till the last amazon has a valid move.
-7.Player with the highest treasure points wins the game.
+7.Player with the highest amount of coins wins the game.
