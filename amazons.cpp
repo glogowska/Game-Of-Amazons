@@ -5,6 +5,8 @@ Amazon::Amazon(int amazonID, int playerID){
     this->row=0;
     this->col=0;
     this->playerID=playerID;
+    this->killed = false;
+    this->inMud = false; 
 }
 
 void Amazon:: printAmazonInfo(){
@@ -34,6 +36,15 @@ int Amazon::getColumn(){
 int Amazon::getPlayerID(){
     return this->playerID;
 }
+
+bool Amazon::getKilled(){
+    return this->killed;
+}
+
+bool Amazon::getInMud(){
+    return this->inMud;
+}
+
 void Amazon::setRow(int row){
     this->row = row;
 }

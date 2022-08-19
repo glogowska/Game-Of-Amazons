@@ -9,6 +9,8 @@ class Amazon{
     int row;
     int col;
     int playerID;
+    bool killed;
+    bool inMud;
 
     public:
     Amazon(int amazonID, int playerID);
@@ -24,6 +26,8 @@ class Amazon{
     int getRow();
     int getColumn();
     int getPlayerID();
+    bool getKilled();
+    bool getInMud();
 
     //setters
     void setRow(int row);

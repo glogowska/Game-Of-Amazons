@@ -1,6 +1,6 @@
 #include "amazons.cpp"
 
-const int AMAZONSPERPLAYER = 4;
+const int AMAZONSPERPLAYER = 3;
 
 class Player{
 private:

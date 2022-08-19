@@ -1,4 +1,4 @@
-#include "boardManager.cpp"
+#include "gameFunctions.cpp"
 
 int testing(){
     //TESTING AMAZON CLASS
@@ -40,7 +40,11 @@ int testing(){
         cout<<"TEST 1.5"<<endl;
         BoardManager BM1;
         BM1.generateBoard(3,4);
+        //BM1.printFields();
+        
         BM1.printBoard();
+        BM1.printBoardManager();
+        
     }
     return 0;
 }
