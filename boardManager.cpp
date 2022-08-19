@@ -147,3 +147,16 @@ void BoardManager::setRows(int rows){
 void BoardManager::setCols(int cols){
     this->cols = cols;
 }
+
+bool BoardManager::clearFieldAmazonPlayer(int playerID, int amazonID){
+    Field* current = this->head;
+    while(current){
+        if(current->getAmazonID()==amazonID){
+            current->setAmazonID(0);
+            current->setPlayerID(0);
+            return true;
+        }
+        else current = current->refNextField();
+    }
+    return false;
+}

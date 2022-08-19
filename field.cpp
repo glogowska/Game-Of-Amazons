@@ -50,6 +50,13 @@ void Field::setCoins(int num){
     this->coins = num;
 }
 
+void Field::setAmazonID(int num){
+    this->amazonID = num;
+}
+void Field::setPlayerID(int num){
+    this->playerID = num;
+}
+
 
 
 Field *&Field::refNextField(){

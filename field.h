@@ -27,6 +27,8 @@ int getArrow();
 
 void setSpecial(int num);
 void setCoins(int num);
+void setAmazonID(int num);
+void setPlayerID(int num);
 
 Field *&refNextField();
 };

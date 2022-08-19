@@ -1,10 +1,13 @@
 #include "amazons.cpp"
+#include <string>
+#include <cstring>
 
 const int AMAZONSPERPLAYER = 3;
 
 class Player{
 private:
 int playerID; //unique player ID
+string playerName;
 int amazonCounter;
 Player *next = nullptr;
 Amazon *aPtr[AMAZONSPERPLAYER];
@@ -13,7 +16,7 @@ Amazon *aPtr[AMAZONSPERPLAYER];
 // bool addAmazonToPlayer(Amazon *aPtr);
 
 public:
-Player(int playerID);
+Player(int playerID, string playerName);
 
 
 bool addAmazonToPlayer(Amazon *aPtr);
@@ -29,6 +32,7 @@ int freeAmazon();
 int getplayerID();
 int getAmazonCounter();
 Player *&refNextPlayer();
+Amazon *&getAmazon(int amazonID);
 
 };
 

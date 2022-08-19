@@ -1,7 +1,8 @@
 #include "players.h"
 
-Player:: Player(int playerID){
+Player:: Player(int playerID, string playerName){
     this->playerID = playerID;
+    this->playerName = playerName;
     this->amazonCounter=0;
     next=nullptr;
     for(int i=0;i<AMAZONSPERPLAYER;i++){
@@ -36,7 +37,7 @@ void Player::increaseAmazonCounter(){
 }
 
 void Player::printPlayerInfo(){
-    cout<<"These are player's "<<this->playerID<<" amazons: "<<endl;
+    cout<<"These are player's "<<this->playerID<<"(name: "<<this->playerName<<")"<<" amazons: "<<endl;
     for(int i=0;i<this->getAmazonCounter();i++){
         this->aPtr[i]->printAmazonInfoBasic();
     }
@@ -67,4 +68,8 @@ int Player::freeAmazon(){
         }
     }
     return 0;
+}
+
+Amazon *&Player::getAmazon(int amazonID){
+    return this->aPtr[amazonID-1];
 }

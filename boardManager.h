@@ -29,7 +29,7 @@ class BoardManager{
 
     //
     bool placeAmazon(int row, int col);
-    bool clearFieldFromAmazon(int amazonID);
+    bool clearFieldAmazonPlayer(int playerID, int amazonID);
 
     void increasePlayersOnBoardCount();
     void increaseRounds();

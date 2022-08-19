@@ -11,7 +11,7 @@ int testing(){
     //TEST1.2 ADDING AMAZONS AND CHECKING THEIR INFO
     cout<<"TEST 1.2"<<endl;
     {
-        Player P1(1);
+        Player P1(1,"andre");
         P1.addNextAmazonToPlayer();
         P1.addNextAmazonToPlayer();
         //P1.printPlayerInfo();
@@ -22,7 +22,7 @@ int testing(){
     {
         cout<<"TEST 1.3"<<endl;
         PlayersManager PM1;
-        PM1.addPlayer(1);
+        PM1.addPlayer(1,"szyms");
         
         PM1.printPlayersList();
     }
@@ -30,9 +30,9 @@ int testing(){
     {
         cout<<"TEST 1.4"<<endl;
         PlayersManager PM1;
-        PM1.addPlayer(1);
-        PM1.addPlayer(2);
-        PM1.addPlayer(3);
+        PM1.addPlayer(1, "imie1");
+        PM1.addPlayer(2, "imie2");
+        PM1.addPlayer(3, "imie3");
         PM1.printPlayersList();
     }
     //TEST 1.5 BOARD GENERATION
