@@ -16,6 +16,7 @@ public:
 Field(int row, int col);
 
 bool freeField();
+bool noAmazon();
 
 int getRow();
 int getCol();

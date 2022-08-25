@@ -117,8 +117,8 @@ void BoardManager::printBoardManager(){
     cout<<" Players: "<< this->playersOnBoard<<endl;
 }
 
-void BoardManager::clearField(int row, int col){
-    Field *current = this->findField(row,col);
+void BoardManager::clearFieldSpecialCoins(int row, int col){
+    Field *current = this->findFieldRowCol(row,col);
     current->setCoins(0);
     current->setSpecial(0);
 }
@@ -132,13 +132,28 @@ bool BoardManager::isField(int row, int col){
     return false;
 }
 
-Field *&BoardManager::findField(int row, int col){
+Field *&BoardManager::findFieldRowCol(int row, int col){
     Field*& current = this->head;
     while(current){
         if(current->getRow()==row && current->getCol()==col) return current;
         else current = current->refNextField();
     }
     return current;
+}
+
+Field *&BoardManager::findFieldAmazonPlayer(int playerID, int amazonID){
+    Field *& current = this->head;
+    while(current){
+        if(current->getPlayerID() == playerID && current->getAmazonID() == amazonID){
+            return current;
+        }
+    current = current->refNextField();
+}
+}
+
+int BoardManager::getCoins(int row, int col){
+    Field* current = findFieldRowCol(row,col);
+    return current->getCoins();
 }
 
 void BoardManager::setRows(int rows){
@@ -159,4 +174,19 @@ bool BoardManager::clearFieldAmazonPlayer(int playerID, int amazonID){
         else current = current->refNextField();
     }
     return false;
+}
+int BoardManager::getRowAmazon(int playerID, int amazonID){
+    Field* current = findFieldAmazonPlayer(playerID, amazonID);
+    return current->getRow();
+}
+int BoardManager::getColAmazon(int playerID, int amazonID){
+    Field* current = findFieldAmazonPlayer(playerID, amazonID);
+    return current->getCol();
+}
+
+bool BoardManager::placeAmazon(int row, int col, int playerID, int amazonID){
+    this->clearFieldAmazonPlayer(playerID,amazonID);
+    Field* current  = findFieldRowCol(row,col);
+    current->setPlayerID(playerID);
+    current->setAmazonID(amazonID);
 }

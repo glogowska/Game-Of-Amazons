@@ -19,6 +19,12 @@ bool Field::freeField(){
         return false;
     }
 }
+bool Field::noAmazon(){
+    if(this->amazonID == 0){
+        return true;
+    }
+    return false;
+}
 
 int Field::getRow(){
     return this->row;
@@ -62,3 +68,4 @@ void Field::setPlayerID(int num){
 Field *&Field::refNextField(){
     return this->nextField;
 }
+

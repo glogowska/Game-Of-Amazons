@@ -4,6 +4,7 @@ Player:: Player(int playerID, string playerName){
     this->playerID = playerID;
     this->playerName = playerName;
     this->amazonCounter=0;
+    this->coins=0;
     next=nullptr;
     for(int i=0;i<AMAZONSPERPLAYER;i++){
         aPtr[i]=nullptr;
@@ -48,6 +49,16 @@ int Player::getplayerID(){
 }
 int Player::getAmazonCounter(){
     return this->amazonCounter;
+}
+int Player::getCoins(){
+    return this->coins;
+}
+string Player::getPlayerName(){
+    return this->playerName;
+}
+
+void Player::addCoins(int amount){
+    this->coins = this->coins+amount;
 }
 
 Player *&Player::refNextPlayer(){

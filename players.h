@@ -8,7 +8,8 @@ class Player{
 private:
 int playerID; //unique player ID
 string playerName;
-int amazonCounter;
+int amazonCounter;//?? do I need this even?
+int coins;
 Player *next = nullptr;
 Amazon *aPtr[AMAZONSPERPLAYER];
 
@@ -31,8 +32,14 @@ int freeAmazon();
 
 int getplayerID();
 int getAmazonCounter();
+int getCoins();
+string getPlayerName();
+
+void addCoins(int amount);
+
 Player *&refNextPlayer();
 Amazon *&getAmazon(int amazonID);
+
 
 };
 

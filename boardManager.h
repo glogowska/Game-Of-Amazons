@@ -28,14 +28,21 @@ class BoardManager{
     bool isField(int row, int col);
 
     //
-    bool placeAmazon(int row, int col);
-    bool clearFieldAmazonPlayer(int playerID, int amazonID);
+    bool placeAmazon(int row, int col, int playerID, int amazonID);
 
+    
     void increasePlayersOnBoardCount();
     void increaseRounds();
 
     //clearing a field from coins and specials
-    void clearField(int row, int col);
-    Field *&findField(int row, int col);
+    void clearFieldSpecialCoins(int row, int col);
+    bool clearFieldAmazonPlayer(int playerID, int amazonID);
+
+    int getCoins(int row, int col);
+    int getRowAmazon(int playerID, int amazonID);
+    int getColAmazon(int playerID, int amazonID);
+
+    Field *&findFieldRowCol(int row, int col);
+    Field *&findFieldAmazonPlayer(int playerID, int amazonID);
 
 };

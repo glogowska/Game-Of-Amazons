@@ -34,7 +34,7 @@ void PlayersManager::printPlayersList(){
     cout<<"LIST OF PLAYERS:"<<endl;
     Player* current = this->head;
     while(current){
-        cout<<"Player "<<current->getplayerID()<<endl;//amazons??
+        cout<<"Player "<<current->getplayerID()<<"- "<<current->getPlayerName()<<endl;//amazons??
         current= current->refNextPlayer();
     }
 }
@@ -58,7 +58,7 @@ bool PlayersManager::doesAmazonExist(int playerID,int amazonID){
     return false;
 }
 
-bool PlayersManager::changeFieldAmazonPlayer(int playerID, int amazonID, int row, int col){
+bool PlayersManager::placeAmazonPlayer(int playerID, int amazonID, int row, int col){
     Player* current = this->head;
     if(doesAmazonExist(playerID,amazonID)){
         current->getAmazon(amazonID)->setRow(row);
@@ -66,4 +66,33 @@ bool PlayersManager::changeFieldAmazonPlayer(int playerID, int amazonID, int row
         return true;
     }
     return false;
+}
+
+void PlayersManager::printcheck(){
+    cout<<"PM.testing"<<endl;
+}
+
+string PlayersManager::getPlayerName(int playerID){
+    Player* current = this->head;
+    while(current){
+        if(current->getplayerID()==playerID){
+        return current->getPlayerName();
+    }
+    current = current->refNextPlayer();
+    }
+}
+
+Player *&PlayersManager::findPlayerID(int playerID){
+    Player* current = this->head;
+    while(current){
+        if(current->getplayerID() == playerID){
+            return current;
+        }
+        current = current->refNextPlayer();
+    }
+}
+
+bool PlayersManager::collectCoins(int amount, int playerID){
+    Player* current = findPlayerID(playerID);
+    current->addCoins(amount);    
 }

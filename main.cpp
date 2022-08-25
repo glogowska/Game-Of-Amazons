@@ -2,13 +2,13 @@
 
 //srand (time(NULL)); // to be continued !! - needed for the board randomisation method
 int main(){
-testing();
-//mainLoop(0);    
+//testing();
+mainLoop(0);    
 }
 
 int mainLoop(int stage){
     string responseString;
-    int responseInt;
+    int responseInt, responseInt2, responseInt3;
     BoardManager GAME_BM;
     PlayersManager GAME_PM;
     switch (stage)
@@ -49,9 +49,28 @@ int mainLoop(int stage){
             cin>>responseString;
             GAME_PM.addPlayer(i, responseString);
         }
+        //GAME_PM.printPlayersList();
+    case 3:
+        GAME_BM.generateBoard(3,4);
+        GAME_BM.printBoard();
+        for(int p = 1; p <= responseInt; p++){
+            cout<<"Player "<<GAME_PM.getPlayerName(p)<<" picks places for amazons."<<endl;
+            for(int a = 1; a <= AMAZONSPERPLAYER; a ++){
+                cout<<"row: ";
+                cin>>responseInt2;
+                cout<<"column: ";
+                cin>>responseInt3;
+                placeAmazon(GAME_PM, GAME_BM, a, p, responseInt2, responseInt3);
+                cout<<"checkpoint1";
+                //GAME_BM.printBoard();
 
+                //daj tu jedna wspolna funckje ktora bedzie dodawac amazonki do plaszy
+            }
+        }
+        GAME_BM.printBoard();
         break;
         return 0;
         
     }
+    return 0;
 }
