@@ -5,7 +5,7 @@ int mainLoop(int stage);
 bool moveAmazon(int amazonID, int playerID);
 
 //
-bool placeAmazon(PlayersManager &PM, BoardManager &BM,int row, int col, int amazonID, int playerID);
+bool placeAmazon(PlayersManager &PM, BoardManager &BM, int amazonID, int playerID, int row, int col);
 
 
 //prints out the rules of the game, including the board fields symbols

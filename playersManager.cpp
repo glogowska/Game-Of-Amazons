@@ -83,7 +83,7 @@ string PlayersManager::getPlayerName(int playerID){
 }
 
 Player *&PlayersManager::findPlayerID(int playerID){
-    Player* current = this->head;
+    Player*& current = this->head;
     while(current){
         if(current->getplayerID() == playerID){
             return current;

@@ -9,8 +9,12 @@ Amazon::Amazon(int amazonID, int playerID){
     this->inMud = false; 
 }
 
+Amazon::~Amazon(){
+    //cout<<"Amazon destroyed"<<endl;
+}
+
 void Amazon:: printAmazonInfo(){
-    cout<<"Amazon belongs to player no.: "<< this->playerID << " This is their "<< this->amazonID<<" amazon."<<endl;
+    
 }
 
 void Amazon::printAmazonInfoBasic(){
@@ -21,18 +25,22 @@ bool Amazon::freeAmazon(){
     if(this->row == 0 && this->col == 0){
         return true;
     }
+    if(this->row + this->col == 1) throw "row and col equal to 0 and 1 or 1 and 0"; ///remember to catch :))
     return false;
 }
 
 int Amazon::getAmazonID(){
     return this->amazonID;
 }
+
 int Amazon::getRow(){
     return this->row;
 }
-int Amazon::getColumn(){
+
+int Amazon::getCol(){
     return this->col;
 }
+
 int Amazon::getPlayerID(){
     return this->playerID;
 }
@@ -48,6 +56,15 @@ bool Amazon::getInMud(){
 void Amazon::setRow(int row){
     this->row = row;
 }
+
 void Amazon::setCol(int col){
     this->col = col;
+}
+
+void Amazon::setKilled(bool killed){
+    this->killed = killed;
+}
+
+void Amazon::setInMud(bool inMud){
+    this->inMud = inMud;
 }

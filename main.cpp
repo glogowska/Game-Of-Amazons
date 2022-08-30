@@ -2,8 +2,8 @@
 
 //srand (time(NULL)); // to be continued !! - needed for the board randomisation method
 int main(){
-//testing();
-mainLoop(0);    
+testing();
+//mainLoop(0);    
 }
 
 int mainLoop(int stage){
@@ -54,15 +54,17 @@ int mainLoop(int stage){
         GAME_BM.generateBoard(3,4);
         GAME_BM.printBoard();
         for(int p = 1; p <= responseInt; p++){
+            cout<< "*CHECK HOW MANY PLAYERS*"<<responseInt<<endl;
             cout<<"Player "<<GAME_PM.getPlayerName(p)<<" picks places for amazons."<<endl;
             for(int a = 1; a <= AMAZONSPERPLAYER; a ++){
+                cout<<"Amazon "<<a<<endl;
                 cout<<"row: ";
                 cin>>responseInt2;
                 cout<<"column: ";
                 cin>>responseInt3;
                 placeAmazon(GAME_PM, GAME_BM, a, p, responseInt2, responseInt3);
-                cout<<"checkpoint1";
-                //GAME_BM.printBoard();
+                cout<<"checkpoint1"<<endl;
+                GAME_BM.printBoard();
 
                 //daj tu jedna wspolna funckje ktora bedzie dodawac amazonki do plaszy
             }
